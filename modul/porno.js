@@ -22,16 +22,14 @@ fetch(`https://jsonplaceholder.typicode.com/users/${user.id}`)
         let div = document.createElement('div');
         div.innerText = `${user} - ${users[user]}`;
         document.body.append(div);
-      }
-      else {
-        for (const item of users[user]) {
+      } else {
+        for (const item in users[user]) {
           if (typeof item !== 'object') {
             let div = document.createElement('div');
             div.innerText = `${item} - ${users[user][item]}`;
             document.body.append(div);
-          }
-          else {
-            for (const itemUs of users[user][item]) {
+          } else {
+            for (const itemUs in users[user][item]) {
               if (typeof itemUs !== 'object') {
                 let div = document.createElement('div');
                 div.innerText = `${itemUs} - ${users[user][item][itemUs]}`;
@@ -50,18 +48,20 @@ fetch(`https://jsonplaceholder.typicode.com/users/${user.id}`)
       localStorage.setItem(key,JSON.stringify(user))
       location.href = `posts.html?data=${JSON.stringify(user)}`;
 
+      fetch(`https://jsonplaceholder.typicode.com/users/${user.id}/posts`)
+        .then(response => response.json())
+        .then(users => {
+          for (const user of users){
+            let div = document.createElement('div');
+            div.innerText = `${user.id} ${user.name}`;
 
-      // fetch(`https://jsonplaceholder.typicode.com/users/${user.id}/posts`)
-      //   .then(response => response.json())
-      //   .then(users => {
-      //     for (const user of users){
-      //       let div = document.createElement('div');
-      //       div.innerText = `${user.} ${user.name}`;
-      //
-      //       document.body.appendChild(div);
-      //     }
-      //   });
+            document.body.appendChild(div);
+          }
+        });
+
     }
+
+
 
   });
 
