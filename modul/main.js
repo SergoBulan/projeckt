@@ -13,14 +13,16 @@ fetch('https://jsonplaceholder.typicode.com/users')
       div.innerText = `${user.id} ${user.name}`;
 
       let a = document.createElement('a');
-      a.href = `../last/details.html?data=${JSON.stringify(user)}`;
+      a.href = `details.html?data=${JSON.stringify(user)}`;
       a.innerText = ' info user';
       div.appendChild(a);
 
       document.body.appendChild(div);
     }
   });
-location.href = `../last/details.html?data=${JSON.stringify(user)}`;
+
+
+// location.href = `../last/details.html?data=${JSON.stringify(user)}`;
 
 
 
@@ -40,3 +42,31 @@ location.href = `../last/details.html?data=${JSON.stringify(user)}`;
 //   блоки з короткою іфною про post - в ряд по 5 .
 //   post-details.html - блок з інфою про пост зверху. Коментарі - по 4 в ряд.
 //   Всі елементи котрі характеризують users, posts, comments візуалізувати, так, щоб було видно що це блоки (дати фон. марджини і тд)
+
+
+
+// fetch('https://jsonplaceholder.typicode.com/users')
+//   .then(response => response.json())
+//   .then(users => {
+//     for (const user of users){
+//       let div = document.createElement('div');
+//       div.innerText = `${user.id} ${user.name}`;
+//
+//       // let button = document.createElement('button');
+//       // button.innerText = 'info user';
+//       // div.appendChild(button);
+//       // but.onclick (e){
+//       //     e.preventDefault()
+//       //     localStorage.setItem('key',JSON.stringify(user))
+//       //     location.href = `../last/details.html?data=${JSON.stringify(user)}`;
+//       // }
+//
+//       let a = document.createElement('a');
+//       a.href = `../last/details.html?data=${JSON.stringify(user)}`;
+//       a.innerText = ' info user';
+//       div.appendChild(a);
+//
+//       document.body.appendChild(div);
+//     }
+//   });
+// location.href = `../last/details.html?data=${JSON.stringify(user)}`;
