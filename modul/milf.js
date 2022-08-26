@@ -2,20 +2,19 @@
 // 7 Вивести всю, без виключення, інформацію про об'єкт post на який клікнули .
 // 8 Нижчє інформаці про пост, вивести всі коментарі поточного поста (ендпоінт  - https://jsonplaceholder.typicode.com/posts/POST_ID/comments)
 
+let key = 'key';
+let div = document.createElement('div');
 
 
 let url = new URL(location.href);
-let user = JSON.parse(url.searchParams.get('data'));
+let boos = JSON.parse(url.searchParams.get('title'));
+console.log(boos)
 
-fetch(`https://jsonplaceholder.typicode.com/users/${user.id}/comments`)
+fetch(`https://jsonplaceholder.typicode.com/posts/${post.id}`)
   .then(response => response.json())
-  .then(users => {
-    for (const user in users) {
-      let ul = document.createElement('ul');
-      let li = document.createElement('li');
-      li.innerText = `${user.id} ${user.name}`;
-      ul.append(li);
-      document.body.appendChild(ul);
+  .then(posts => {
+    for (const post in posts) {
+
     }
 
 
