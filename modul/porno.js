@@ -17,28 +17,31 @@ let user = JSON.parse(url.searchParams.get('data'));
 fetch(`https://jsonplaceholder.typicode.com/users/${user.id}`)
   .then(response => response.json())
   .then(users => {
+
     for (const user in users) {
       if (typeof user !== 'object') {
         let div = document.createElement('div');
         div.innerText = `${user} - ${users[user]}`;
         document.body.append(div);
-      } else {
-        for (const item in users[user]) {
-          if (typeof item !== 'object') {
-            let div = document.createElement('div');
-            div.innerText = `${item} - ${users[user][item]}`;
-            document.body.append(div);
-          } else {
-            for (const itemUs in users[user][item]) {
-              if (typeof itemUs !== 'object') {
-                let div = document.createElement('div');
-                div.innerText = `${itemUs} - ${users[user][item][itemUs]}`;
-                document.body.append(div);
+      } else if (typeof user === 'object'){
+          for (const item in users[user]) {
+            if (typeof item !== 'object') {
+              let div = document.createElement('div');
+              div.innerText = `${item} - ${users[user][item]}`;
+              document.body.append(div);
+          } else if (typeof item === 'object') {
+              for (const itemUs in users[user][item]) {
+                if (typeof itemUs !== 'object') {
+                  let div = document.createElement('div');
+                  div.innerText = `${itemUs} - ${users[user][item][itemUs]}`;
+                  document.body.append(div);
+                }else {
+                  console.log('hwatit');
+                }
               }
             }
           }
         }
-      }
     }
     let button = document.createElement('button');
     button.innerText = 'trus for user'

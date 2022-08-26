@@ -69,4 +69,4 @@ fetch('https://jsonplaceholder.typicode.com/users')
 //       document.body.appendChild(div);
 //     }
 //   });
-// location.href = `../last/details.html?data=${JSON.stringify(user)}`;
+
