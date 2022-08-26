@@ -53,41 +53,29 @@ fetch(`https://jsonplaceholder.typicode.com/users/${user.id}`)
           div2.classList.add('titleInfo');
           div.append(div2);
 
-          let ul = document.createElement('ul');
-
           for (const post of posts) {
-            let li = document.createElement('li');
-            li.innerText = `${post.title}`;
-            ul.append(li)
-          }
-          div2.append(ul)
-
+            let divList = document.createElement('div');
+            divList.innerText = `${post.title}`
+            div2.append(divList)
 
             let klick = document.createElement('button');
-            klick.innerText = 'lets go'
-            div2.appendChild(klick);
-            klick.onclick = function (e) {
-              e.preventDefault()
-              localStorage.setItem(key, JSON.stringify(posts))
-              location.href = `posts.html?title=${JSON.stringify(posts)}`;
+              klick.innerText = 'lets go'
+              div2.appendChild(klick);
+                klick.onclick = function (e) {
+                e.preventDefault()
+                location.href = `posts.html?title=${post.id}`;
+              }
+          }
+          div2.appendChild(divList)
 
-            }
 
 
 
 
         })
-
     }
   });
 
-
-
-
-    // let a = document.createElement('a');
-    // a.href = `posts.html?title=${JSON.stringify(posts)}`;
-    // a.innerText = ' lets go ';
-    // div2.appendChild(a);
 
 
 // let klick = document.createElement('button');
@@ -97,12 +85,11 @@ fetch(`https://jsonplaceholder.typicode.com/users/${user.id}`)
 //   e.preventDefault()
 //   localStorage.setItem(key, JSON.stringify(posts))
 //   location.href = `posts.html?title=${JSON.stringify(posts)}`;
-//
-//
-//   localStorage.setItem(key, JSON.stringify(posts))
-// }
-
-
+//}
+    // let a = document.createElement('a');
+    // a.href = `posts.html?title=${JSON.stringify(posts)}`;
+    // a.innerText = ' lets go ';
+    // div2.appendChild(a);
 
 
 
@@ -125,11 +112,6 @@ fetch(`https://jsonplaceholder.typicode.com/users/${user.id}`)
       //       document.body.appendChild(div);
       //     }
       //   });
-
-
-
-
-
 
 
 
@@ -172,12 +154,6 @@ fetch(`https://jsonplaceholder.typicode.com/users/${user.id}`)
   // });
   //
   //
-
-
-
-
-
-
 // let button = document.createElement('button');
 // button.innerText = 'lie for user'
 // div.appendChild(button);
@@ -190,9 +166,6 @@ fetch(`https://jsonplaceholder.typicode.com/users/${user.id}`)
 
 // let div = document.createElement('div')'
 //document.body.appendChild(div)
-
-
-
 
 // let key = 'key';
 // let div = document.createElement('div');

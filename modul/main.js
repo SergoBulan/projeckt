@@ -8,8 +8,10 @@
 fetch('https://jsonplaceholder.typicode.com/users')
   .then(response => response.json())
   .then(users => {
+    let divOsn = document.createElement('div');
     for (const user of users){
       let div = document.createElement('div');
+      div.classList.add('piss');
       div.innerText = `${user.id} ${user.name}`;
 
       let a = document.createElement('a');
@@ -17,8 +19,9 @@ fetch('https://jsonplaceholder.typicode.com/users')
       a.innerText = ' info user';
       div.appendChild(a);
 
-      document.body.appendChild(div);
+      divOsn.appendChild(div);
     }
+    document.body.append(divOsn)
   });
 
 

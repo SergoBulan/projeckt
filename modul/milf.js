@@ -3,19 +3,19 @@
 // 8 Нижчє інформаці про пост, вивести всі коментарі поточного поста (ендпоінт  - https://jsonplaceholder.typicode.com/posts/POST_ID/comments)
 
 let key = 'key';
-let div = document.createElement('div');
 
 
 let url = new URL(location.href);
-let boos = JSON.parse(url.searchParams.get('title'));
-console.log(boos)
+let post = url.searchParams.get('title');
+console.log(post)
 
-fetch(`https://jsonplaceholder.typicode.com/posts/${post.id}`)
+fetch(`https://jsonplaceholder.typicode.com/posts/${post}`)
   .then(response => response.json())
-  .then(posts => {
-    for (const post in posts) {
-
-    }
-
-
+  .then(post => {
+    for (const key in post) {
+      let div = document.createElement('div');
+      div.classList.add('titleInfo');
+      div.innerText = `${key} ${post[key]}`
+      document.body.append(div);
+      }
   });
