@@ -7,7 +7,7 @@ let key = 'key';
 
 let url = new URL(location.href);
 let post = url.searchParams.get('title');
-console.log(post)
+
 
 fetch(`https://jsonplaceholder.typicode.com/posts/${post}`)
   .then(response => response.json())
@@ -19,3 +19,18 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${post}`)
       document.body.append(div);
       }
   });
+
+
+fetch(`https://jsonplaceholder.typicode.com/posts/${post}/comments`)
+  .then(response => response.json())
+  .then(post => {
+    for (const key in post) {
+      let div = document.createElement('div');
+      div.innerText = `${post[key]}`
+      console.log(post[key])
+
+
+    }
+  });
+
+

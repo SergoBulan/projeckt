@@ -56,7 +56,7 @@ fetch(`https://jsonplaceholder.typicode.com/users/${user.id}`)
           for (const post of posts) {
             let divList = document.createElement('div');
             divList.innerText = `${post.title}`
-            div2.append(divList)
+            div2.append(divList);
 
             let klick = document.createElement('button');
               klick.innerText = 'lets go'
@@ -66,7 +66,7 @@ fetch(`https://jsonplaceholder.typicode.com/users/${user.id}`)
                 location.href = `posts.html?title=${post.id}`;
               }
           }
-          div2.appendChild(divList)
+          div2.appendChild(divList);
 
 
 
