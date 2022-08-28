@@ -12,11 +12,13 @@ fetch('https://jsonplaceholder.typicode.com/users')
     for (const user of users){
       let div = document.createElement('div');
       div.classList.add('piss');
-      div.innerText = `${user.id} ${user.name}`;
+      div.innerText = `${user.id}`;
+      div.innerText = `${user.name}`;
+
 
       let a = document.createElement('a');
       a.href = `details.html?data=${JSON.stringify(user)}`;
-      a.innerText = ' info user';
+      a.innerText = 'Info USER';
       div.appendChild(a);
 
       divOsn.appendChild(div);
