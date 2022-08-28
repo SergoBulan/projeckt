@@ -1,0 +1,110 @@
+/*   user-details.html - блок з інфою про user зверху сторінки. Кнопка нижчє, на 90% ширини сторінки, по центру.*/
+/*   блоки з короткою іфною про post - в ряд по 5 .*!*/
+
+body{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0;
+  background: linen;
+}
+
+.onlifans {
+  border: 1px solid black;
+  width: 300px;
+  height: 700px;
+  border-radius: 15px;
+  padding-top: 5px;
+}
+.onlifans{
+  display: flex;
+  flex-wrap: wrap;
+  background:palegreen;
+  justify-content: center;
+}
+
+
+.livstixs {
+  box-sizing:border-box;
+  background:lemonchiffon;
+}
+.livstixs{
+  width: 160px;
+  border: 1px solid black;
+  padding-left: 40px;
+  border-radius: 50px;
+}
+
+
+.prist17 {
+  display: flex;
+  justify-content: center;
+  box-sizing:border-box;
+  background:lightpink;
+}
+.prist17{
+  width: 230px;
+  border: 1px solid black;
+  height:40px;
+  border-radius:10px;
+  padding-left: 10px;
+}
+
+
+.selti {
+  display: flex;
+  justify-content: center;
+  box-sizing:border-box;
+  align-items: center;
+  background:lightskyblue;
+}
+.selti{
+  height:50px;
+  border-radius:10px;
+  padding-left: 10px;
+  border: 1px solid black;
+  width: 220px;
+}
+
+
+.donate {
+  margin-top:10px;
+  margin-bottom: 10px;
+  width: 90%;
+  border-radius: 50px;
+  background:mediumseagreen;
+  height:30px;
+}
+
+.titleInfo {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing:border-box;
+  justify-content:center;
+  width:900px;
+}
+
+
+.deedee{
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  box-sizing:border-box;
+}
+.deedee{
+  padding: 10px;
+  width:20%;
+  height:150px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background:thistle;
+}
+
+
+.alicia{
+  box-sizing:border-box;
+  margin-bottom: 5px;
+  width: 50%;
+  border-radius: 50px;
+  background:seashell;
+}

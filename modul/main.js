@@ -12,8 +12,8 @@ fetch('https://jsonplaceholder.typicode.com/users')
     for (const user of users){
       let div = document.createElement('div');
       div.classList.add('piss');
-      div.innerText = `${user.id}`;
-      div.innerText = `${user.name}`;
+      div.innerText = `${user.id} ${user.name}`;
+
 
 
       let a = document.createElement('a');
