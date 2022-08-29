@@ -14,7 +14,7 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${post}`)
     for (const key in post) {
       let div1 = document.createElement('div');
       div1.classList.add('aka');
-      div1.innerHTML = `${key}: ${post[key]}`;
+      div1.innerHTML = <h2>`${key}: ${post[key]}`</h2>;
       div.append(div1);
     }
   });
@@ -42,7 +42,6 @@ fetch(`https://jsonplaceholder.typicode.com/posts/${post}/comments`)
         }
 
       }
-
 
     }
   });
